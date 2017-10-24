@@ -1,6 +1,5 @@
-package fr.hadrienmp.random_chiffrage.domain
+package fr.hadrienmp.random_estimates.domain
 
-import fr.hadrienmp.random_chiffrage.domain.Estimate
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 

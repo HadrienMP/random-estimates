@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_chiffrage.domain
+package fr.hadrienmp.random_estimates.domain
 
 class RandomEstimate(estimates: ListWrapper<String>, units: ListWrapper<String>) {
     private val estimate = Estimate(

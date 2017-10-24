@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_chiffrage.libs.file
+package fr.hadrienmp.random_estimates.libs.file
 
 import java.net.URI
 
