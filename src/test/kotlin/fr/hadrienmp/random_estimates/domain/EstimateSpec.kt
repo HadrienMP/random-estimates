@@ -6,38 +6,38 @@ import org.junit.Test
 class EstimateSpec {
 
     @Test fun should_concatenate_the_unit_and_the_estimate() {
-        val chiffre = "1"
+        val estimate = "1"
         val unit = "jour"
 
-        val randomChiffrage = Estimate(chiffre, unit)
+        val randomEstimate = Estimate(estimate, unit)
 
-        assertThat(randomChiffrage.toString()).isEqualTo("1 jour")
+        assertThat(randomEstimate.toString()).isEqualTo("1 jour")
     }
 
     @Test fun the_task_is_already_done_when_the_estimate_is_0() {
-        val chiffre = "0"
+        val estimate = "0"
         val unit = "jour"
 
-        val randomChiffrage = Estimate(chiffre, unit)
+        val randomEstimate = Estimate(estimate, unit)
 
-        assertThat(randomChiffrage.toString()).isEqualTo("Déjà terminé ! Félicitations")
+        assertThat(randomEstimate.toString()).isEqualTo("Déjà terminé ! Félicitations")
     }
 
     @Test fun the_unit_should_be_plural_when_the_estimate_is_bigger_than_1() {
-        val chiffre = "2"
+        val estimate = "2"
         val unit = "jour"
 
-        val randomChiffrage = Estimate(chiffre, unit)
+        val randomEstimate = Estimate(estimate, unit)
 
-        assertThat(randomChiffrage.toString()).isEqualTo("2 jours")
+        assertThat(randomEstimate.toString()).isEqualTo("2 jours")
     }
 
     @Test fun the_unit_should_not_be_plural_when_the_estimate_is_not_a_number() {
-        val chiffre = "toto"
+        val estimate = "toto"
         val unit = "jour"
 
-        val randomChiffrage = Estimate(chiffre, unit)
+        val randomEstimate = Estimate(estimate, unit)
 
-        assertThat(randomChiffrage.toString()).isEqualTo("toto jour")
+        assertThat(randomEstimate.toString()).isEqualTo("toto jour")
     }
 }
