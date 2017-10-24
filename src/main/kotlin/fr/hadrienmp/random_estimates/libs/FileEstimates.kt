@@ -5,7 +5,7 @@ import fr.hadrienmp.random_estimates.libs.file.ClassPathURI
 import fr.hadrienmp.random_estimates.libs.file.File
 
 class FileEstimates: ListWrapper<String> {
-    private val file = File(ClassPathURI("estimates.json"))
+    private val file = File(ClassPathURI("estimates.txt"))
 
     override fun all(): List<String> {
         return file.lines()
