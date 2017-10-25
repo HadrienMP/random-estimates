@@ -5,3 +5,4 @@ En faisant un effort je suis sûr que tu peux le faire en %s.
 Comme j'en savais rien, j'ai fait au hasard : %s.
 Si tu vires les tests unitaires en %s ça passe.
 Je t'en poses des questions moi ? <0nn420
+Au doigt mouillé : %s.
