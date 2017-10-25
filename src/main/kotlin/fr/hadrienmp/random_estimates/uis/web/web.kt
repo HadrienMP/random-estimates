@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
 
         it.result("""{
             "color": "green",
-            "message": $message,
+            "message": "$message",
             "notify": false,
             "message_format": "text"
         }""")
