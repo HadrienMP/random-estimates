@@ -1,14 +1,14 @@
-package fr.hadrienmp.random_estimates.libs
+package fr.hadrienmp.random_estimates.data_sources
 
-import fr.hadrienmp.random_estimates.domain.ListWrapper
+import fr.hadrienmp.random_estimates.estimates.ListWrapper
 import java.time.Duration
 
 class Cache<T>(private val listWrapper: ListWrapper<T>, private val maxAge: Duration): ListWrapper<T> {
 
     private var lastUpdateTime = now()
-    private var cached = listWrapper.all()
+    private var cached = listWrapper.list()
 
-    override fun all(): List<T> {
+    override fun list(): List<T> {
         if (isOutdated()) {
             update()
         }
@@ -18,7 +18,7 @@ class Cache<T>(private val listWrapper: ListWrapper<T>, private val maxAge: Dura
     private fun isOutdated() = now() - lastUpdateTime > maxAge.toMillis()
 
     private fun update() {
-        cached = listWrapper.all()
+        cached = listWrapper.list()
         lastUpdateTime = now()
     }
 

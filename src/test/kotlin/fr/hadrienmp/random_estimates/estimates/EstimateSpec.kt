@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_estimates.domain
+package fr.hadrienmp.random_estimates.estimates
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
