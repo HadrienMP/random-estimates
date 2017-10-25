@@ -5,10 +5,7 @@ buildscript {
     ext.kotlin_version = '1.1.4-3'
 
     repositories {
-        maven {
-            mavenLocal()
-            url "http://nexus.intranet.darty.fr/repository/releases/"
-        }
+        mavenCentral()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -20,10 +17,7 @@ apply plugin: 'application'
 mainClassName = "fr.hadrienmp.random_estimates.uis.web.WebKt"
 
 repositories {
-    maven {
-        mavenLocal()
-        url "http://nexus.intranet.darty.fr/repository/releases/"
-    }
+    mavenCentral()
 }
 
 dependencies {
