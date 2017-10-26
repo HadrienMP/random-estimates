@@ -7,7 +7,7 @@ class Random<T>(list: List<T>) {
         private val random = Random()
     }
 
-    constructor(listWrapper: ListWrapper<T>): this(listWrapper.list())
+    constructor(listProvider: ListProvider<T>): this(listProvider.get())
 
     private val value = list.random()
 

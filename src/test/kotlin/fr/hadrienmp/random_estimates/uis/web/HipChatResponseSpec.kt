@@ -8,13 +8,21 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 
+val HIPCHAT_RESPONSE_FORM = Regex("""\{\s*"color":\s?"\w+",\s*"message":\s?".*",\s*"notify":\s?(true|false),\s*"message_format":\s?"\w+"\s*}""")
+
 @RunWith(JUnitQuickcheck::class)
 class HipChatResponseSpec {
 
-    @Property(trials = 10_000)
+    @Property(trials = 1_000)
     fun `contains valid json`(message: String) {
         val response = HipChatResponse(message).toString()
         assertThat(isValidJson(response)).isTrue()
+    }
+
+    @Property(trials = 1_000)
+    fun `matched the hip chat response spec`(message: String) {
+        val response = HipChatResponse(message).toString()
+        assertThat(HIPCHAT_RESPONSE_FORM.matches(response)).`as`(response + " aurait du matcher " + HIPCHAT_RESPONSE_FORM)
     }
 
     @Test fun `escapes quotes`() {

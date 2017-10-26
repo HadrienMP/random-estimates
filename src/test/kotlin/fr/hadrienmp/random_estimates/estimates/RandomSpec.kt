@@ -10,14 +10,14 @@ class RandomSpec {
     @Test fun `a random element of a list with a single element is the element`() {
         val element = "Coucou"
 
-        val random = Random(SimpleListWrapper(listOf(element)))
+        val random = Random(SimpleListProvider(listOf(element)))
 
         assertThat(random.value()).isEqualTo(element)
     }
 
     @Test fun `once picked the random value never changes`() {
         val list = (1..100).map { UUID.randomUUID() }
-        val listWrapper = SimpleListWrapper(list)
+        val listWrapper = SimpleListProvider(list)
 
         val random = Random(listWrapper)
 
@@ -44,5 +44,11 @@ class RandomSpec {
         assertThatThrownBy { Random(listOf<String>()) }
                 .isInstanceOf(IllegalArgumentException::class.java)
                 .hasMessage("La liste ne peut pas être vide")
+    }
+
+    class SimpleListProvider<out T>(private val list:List<T>): ListProvider<T> {
+        override fun get(): List<T> {
+            return list
+        }
     }
 }
