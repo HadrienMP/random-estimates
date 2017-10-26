@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_estimates.uis.web
+package fr.hadrienmp.random_estimates.lib.web
 
 class Port(private val value: Int) {
     companion object {

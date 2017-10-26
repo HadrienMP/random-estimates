@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_estimates.estimates
+package fr.hadrienmp.random_estimates.domain
 
 interface ListProvider<out T> {
     fun get(): List<T>

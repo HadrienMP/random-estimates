@@ -1,5 +1,6 @@
-package fr.hadrienmp.random_estimates.uis.web
+package fr.hadrienmp.random_estimates.lib.web
 
+import fr.hadrienmp.random_estimates.lib.web.Port
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 

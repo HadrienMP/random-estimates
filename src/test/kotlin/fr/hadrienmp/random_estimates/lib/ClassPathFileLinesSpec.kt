@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_estimates.data_sources
+package fr.hadrienmp.random_estimates.lib
 
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy

@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_estimates.estimates
+package fr.hadrienmp.random_estimates.domain
 
 class Estimate(private val estimate: Any, private val unit: Any) {
     override fun toString(): String {

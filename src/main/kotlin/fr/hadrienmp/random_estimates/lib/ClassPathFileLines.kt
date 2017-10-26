@@ -1,6 +1,6 @@
-package fr.hadrienmp.random_estimates.data_sources
+package fr.hadrienmp.random_estimates.lib
 
-import fr.hadrienmp.random_estimates.estimates.ListProvider
+import fr.hadrienmp.random_estimates.domain.ListProvider
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import kotlin.streams.toList

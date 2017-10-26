@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_estimates.uis.web
+package fr.hadrienmp.random_estimates.bot.hipchat
 
 class HipChatResponse(private val message: String) {
     override fun toString(): String {
