@@ -1,6 +1,5 @@
 package fr.hadrienmp.random_estimates.lib
 
-import fr.hadrienmp.random_estimates.domain.ListProvider
 import org.junit.Test
 import org.mockito.Mockito.*
 import java.time.Duration

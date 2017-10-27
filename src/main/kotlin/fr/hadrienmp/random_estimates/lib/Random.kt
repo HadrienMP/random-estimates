@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_estimates.domain
+package fr.hadrienmp.random_estimates.lib
 
 import java.util.Random
 

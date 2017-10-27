@@ -1,7 +1,7 @@
 package fr.hadrienmp.random_estimates.bot.hipchat
 
 import fr.hadrienmp.random_estimates.domain.Estimate
-import fr.hadrienmp.random_estimates.domain.Random
+import fr.hadrienmp.random_estimates.lib.Random
 import fr.hadrienmp.random_estimates.lib.Cache
 import fr.hadrienmp.random_estimates.lib.ClassPathFileLines
 import fr.hadrienmp.random_estimates.lib.web.Port

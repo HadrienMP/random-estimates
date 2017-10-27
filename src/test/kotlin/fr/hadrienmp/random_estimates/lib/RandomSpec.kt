@@ -1,5 +1,7 @@
-package fr.hadrienmp.random_estimates.domain
+package fr.hadrienmp.random_estimates.lib
 
+import fr.hadrienmp.random_estimates.lib.ListProvider
+import fr.hadrienmp.random_estimates.lib.Random
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.Test
