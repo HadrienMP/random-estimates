@@ -15,17 +15,28 @@ fun main(args: Array<String>) {
 fun webapp(port: Port): WebApp {
     return WebApp(port).routes {
 
-        val estimates = Cache(ClassPathFileLines("estimates.txt"), Duration.ofMinutes(5))
-        val units = Cache(ClassPathFileLines("units.txt"), Duration.ofMinutes(5))
-        val phrases = Cache(ClassPathFileLines("phrases.txt"), Duration.ofMinutes(5))
+        val randomEstimates = RandomEstimates()
 
         it.post("/") {
-            val estimate = Estimate(Random(estimates), Random(units))
-            val message = Random(phrases).value().format(estimate)
-            val response = HipChatResponse(message)
-
+            val rawResponse = randomEstimates.response()
+            val response = HipChatResponse(rawResponse)
             it.result(response.toString())
         }
+    }
+}
+
+interface Bot {
+    fun response(): String
+}
+
+class RandomEstimates: Bot {
+    private val estimates = Cache(ClassPathFileLines("estimates.txt"), Duration.ofMinutes(5))
+    private val units = Cache(ClassPathFileLines("units.txt"), Duration.ofMinutes(5))
+    private val phrases = Cache(ClassPathFileLines("phrases.txt"), Duration.ofMinutes(5))
+
+    override fun response(): String {
+        val estimate = Estimate(Random(estimates), Random(units))
+        return Random(phrases).value().format(estimate)
     }
 }
 

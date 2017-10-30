@@ -1,9 +1,8 @@
-package fr.hadrienmp.random_estimates.lib.web
+package fr.hadrienmp.random_estimates.bot.hipchat
 
 import com.jcabi.http.Request
 import com.jcabi.http.request.JdkRequest
-import fr.hadrienmp.random_estimates.bot.hipchat.HIPCHAT_RESPONSE_FORM
-import fr.hadrienmp.random_estimates.bot.hipchat.webapp
+import fr.hadrienmp.random_estimates.lib.web.PortStore
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.After
 import org.junit.Before

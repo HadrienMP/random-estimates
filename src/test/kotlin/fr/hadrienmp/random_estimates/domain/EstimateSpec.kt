@@ -32,6 +32,15 @@ class EstimateSpec {
         assertThat(randomEstimate.toString()).isEqualTo("2 jours")
     }
 
+    @Test fun the_unit_should_be_plural_when_the_estimate_is_lower_than_minus_1() {
+        val estimate = "-2"
+        val unit = "jour"
+
+        val randomEstimate = Estimate(estimate, unit)
+
+        assertThat(randomEstimate.toString()).isEqualTo("-2 jours")
+    }
+
     @Test fun the_unit_should_not_be_plural_when_the_estimate_is_not_a_number() {
         val estimate = "toto"
         val unit = "jour"
