@@ -17,6 +17,6 @@ fun webapp(port: Port): WebApp {
     return WebApp(port).withRoutes {
         it.get("/", HomePage::display)
         it.post("/", HipchatBot::estimate)
-    }
+    }.withStaticFolder("/webapp")
 }
 

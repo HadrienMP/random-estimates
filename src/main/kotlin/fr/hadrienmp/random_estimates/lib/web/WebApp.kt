@@ -16,4 +16,9 @@ class WebApp(private val app: Javalin) {
     }
 
     constructor(port: Port) : this(Javalin.create().port(port.value()))
+
+    fun withStaticFolder(folder: String): WebApp {
+        app.enableStaticFiles(folder)
+        return this
+    }
 }
