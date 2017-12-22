@@ -2,7 +2,14 @@ Semaine
 Dauphin
 Jour
 An
+Minute
+Heure
 Kilomètre
 Kilogramme
 T-shirt
 Coucou
+Bière
+Tweet
+Hippopotomonstrosesquippedaliophobe
+Patate
+Euro
