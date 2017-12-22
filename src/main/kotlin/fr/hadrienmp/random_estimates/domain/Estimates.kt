@@ -9,7 +9,5 @@ class Estimates {
     private val estimates = Cache(ClassPathFileLines("data/estimates.txt"), Duration.ofMinutes(5))
     private val units = Cache(ClassPathFileLines("data/units.txt"), Duration.ofMinutes(5))
 
-    fun random(): Estimate {
-        return Estimate(Random(estimates), Random(units))
-    }
+    fun random(): Estimate = Estimate(Random(estimates), Random(units))
 }

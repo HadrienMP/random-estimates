@@ -20,7 +20,7 @@ class HomePageSpec {
                 .fetch()
                 .body()
 
-        assertThat(response).contains("<h1>Random Estimates</h1>")
+        assertThat(response).containsPattern(Regex("<h1>.*Random.*Estimate.*").toPattern())
     }
 
     @Test
