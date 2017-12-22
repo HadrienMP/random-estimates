@@ -1,4 +1,4 @@
-package fr.hadrienmp.random_estimates.bot.hipchat
+package fr.hadrienmp.random_estimates.lib.bot.hipchat
 
 import com.google.gson.JsonParseException
 import com.google.gson.JsonParser
