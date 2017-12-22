@@ -2,67 +2,16 @@
 <head>
     <title>Random Estimates !</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            text-align: justify;
-            font-family: 'Open Sans', sans-serif;
-            width: 400px;
-            margin: 0 auto;
-            background: white;
-            position: absolute;
-            bottom: 0;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
-        header {
-            border: 1px solid;
-            border-left: none;
-            border-right: none;
-            padding: 20px 0 30px;
-            margin: 30px 0;
-        }
-        h1 {
-            font-size: 2.45em;
-            text-transform: uppercase;
-            margin-top: 0;
-        }
-        blockquote {
-            color: #777;
-            position: relative;
-            margin: 0 35px;
-        }
-        blockquote::before{
-            content: "\201C";
-            font-family: Georgia, serif;
-            font-size: 49px;
-            font-weight: bold;
-            color: #999;
-            position: absolute;
-            left: -36px;
-            top: -5px;
-        }
-        blockquote::after{
-            content: "\201D";
-            font-family: Georgia, serif;
-            font-size: 49px;
-            font-weight: bold;
-            color: #999;
-            position: absolute;
-            right: -36px;
-            top: -5px;
-        }
-        p {text-align: center;}
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
-        <h1>Random Estimates</h1>
+        <h1><strong>Random</strong> Estimates</h1>
         <blockquote>La vie est trop courte pour estimer des trucs</blockquote>
-    </header>
+    </header><!--
 
-    <p th:text="${estimate}">Estimate</p>
+ --><p th:text="${estimate}">Estimate</p>
 </body>
 </html>
