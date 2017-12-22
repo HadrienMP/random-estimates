@@ -14,7 +14,7 @@ buildscript {
 
 apply plugin: 'kotlin'
 apply plugin: 'application'
-mainClassName = "fr.hadrienmp.random_estimates.bot.hipchat.MainKt"
+mainClassName = "fr.hadrienmp.random_estimates.MainKt"
 
 repositories {
     mavenCentral()
@@ -25,6 +25,7 @@ dependencies {
     compile 'io.javalin:javalin:0.4.2'
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
     compile 'com.google.code.gson:gson:2.8.2'
+    compile 'org.thymeleaf:thymeleaf:3.0.9.RELEASE'
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.4.1'
