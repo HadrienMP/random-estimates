@@ -1,83 +1,12 @@
-$header_width: 200px;
-
-
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  margin: 0;
 
   & > * {
     display: inline-block;
   }
 }
 
-header {
-  border: 2px solid #888;
-  border-left: none;
-  border-right: none;
-  width: $header_width;
-  margin: 40px 40px;
-  padding-top: 10px;
-  vertical-align: middle;
-}
-
-h1 {
-  font-size: 2.43em;
-  text-transform: uppercase;
-  font-weight: normal;
-  text-align: left;
-  margin: 0;
-}
-
-h1 strong {
-  font-size: 1.1em;
-  font-weight: 700;
-}
-
-blockquote {
-  color: #777;
-  position: relative;
-  padding: 0 30px;
-  width: $header_width;
-  box-sizing: border-box;
-  margin: 16px 0;
-  text-align: center;
-}
-
-@mixin quote() {
-  font-family: Georgia, serif;
-  font-size: 49px;
-  font-weight: bold;
-  color: #999;
-  position: absolute;
-  top: -3px;
-}
-
-blockquote::before {
-  @include quote();
-  content: "\201C";
-  left: 3px;
-}
-
-blockquote::after {
-  @include quote();
-  content: "\201D";
-  right: 3px;
-}
-
-p {
-  text-align: left;
-  margin: 30px 20px;
-  width: 500px;
-  font-size: 1.3em;
-  vertical-align: middle;
-  line-height: 2;
-}
-
-@media screen and (max-width: 540px) {
-  p {
-    width: auto;
-    font-size: 1.2em;
-    line-height: normal;
-    text-align: center;
-  }
-}
+@import "header";
+@import "text";
