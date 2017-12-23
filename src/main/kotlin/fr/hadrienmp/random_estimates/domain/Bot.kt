@@ -7,9 +7,9 @@ import java.time.Duration
 import java.util.*
 
 class Bot {
-    val estimates = Cache(ClassPathFileLines("data/estimates.txt"), Duration.ofMinutes(5))
-    val units = Cache(ClassPathFileLines("data/units.txt"), Duration.ofMinutes(5))
-    val phrases = Cache(ClassPathFileLines("data/phrases.txt"), Duration.ofMinutes(5))
+    private val estimates = Cache(ClassPathFileLines("data/estimates.txt"), Duration.ofMinutes(5))
+    private val units = Cache(ClassPathFileLines("data/units.txt"), Duration.ofMinutes(5))
+    private val phrases = Cache(ClassPathFileLines("data/phrases.txt"), Duration.ofMinutes(5))
 
     fun response(locale: Locale = Locale.FRANCE): String {
         val estimate = estimate()
