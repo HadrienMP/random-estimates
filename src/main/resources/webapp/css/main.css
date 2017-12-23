@@ -1,14 +1,15 @@
-/* line 4, ../sass/main.scss */
+/* line 1, ../sass/main.scss */
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  margin: 0;
 }
-/* line 8, ../sass/main.scss */
+/* line 6, ../sass/main.scss */
 body > * {
   display: inline-block;
 }
 
-/* line 13, ../sass/main.scss */
+/* line 3, ../sass/_header.scss */
 header {
   border: 2px solid #888;
   border-left: none;
@@ -19,7 +20,7 @@ header {
   vertical-align: middle;
 }
 
-/* line 23, ../sass/main.scss */
+/* line 13, ../sass/_header.scss */
 h1 {
   font-size: 2.43em;
   text-transform: uppercase;
@@ -27,14 +28,13 @@ h1 {
   text-align: left;
   margin: 0;
 }
-
-/* line 31, ../sass/main.scss */
+/* line 20, ../sass/_header.scss */
 h1 strong {
   font-size: 1.1em;
   font-weight: 700;
 }
 
-/* line 36, ../sass/main.scss */
+/* line 26, ../sass/_header.scss */
 blockquote {
   color: #777;
   position: relative;
@@ -44,8 +44,7 @@ blockquote {
   margin: 16px 0;
   text-align: center;
 }
-
-/* line 55, ../sass/main.scss */
+/* line 45, ../sass/_header.scss */
 blockquote::before {
   font-family: Georgia, serif;
   font-size: 49px;
@@ -56,8 +55,7 @@ blockquote::before {
   content: "\201C";
   left: 3px;
 }
-
-/* line 61, ../sass/main.scss */
+/* line 51, ../sass/_header.scss */
 blockquote::after {
   font-family: Georgia, serif;
   font-size: 49px;
@@ -69,22 +67,28 @@ blockquote::after {
   right: 3px;
 }
 
-/* line 67, ../sass/main.scss */
+/* line 3, ../sass/_text.scss */
 p {
   text-align: left;
-  margin: 30px 20px;
+  margin: 30px 40px;
   width: 500px;
+  min-width: 200px;
   font-size: 1.3em;
   vertical-align: middle;
   line-height: 2;
 }
 
-@media screen and (max-width: 540px) {
-  /* line 77, ../sass/main.scss */
+@media screen and (max-width: 580px) {
+  /* line 14, ../sass/_text.scss */
   p {
     width: auto;
     font-size: 1.2em;
     line-height: normal;
+  }
+}
+@media screen and (max-width: 860px) {
+  /* line 22, ../sass/_text.scss */
+  p {
     text-align: center;
   }
 }
