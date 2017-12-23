@@ -1,0 +1,98 @@
+/* line 1, ../sass/main.scss */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+}
+
+/* line 12, ../sass/main.scss */
+body > * {
+  display: inline-block;
+}
+
+/* line 13, ../sass/main.scss */
+header {
+  border: 2px solid #888;
+  border-left: none;
+  border-right: none;
+  width: 200px;
+  margin: 40px 40px;
+  padding-top: 10px;
+  vertical-align: middle;
+}
+
+/* line 22, ../sass/main.scss */
+h1 {
+  font-size: 2.43em;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: left;
+  margin: 0;
+}
+
+/* line 30, ../sass/main.scss */
+h1 strong {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+/* line 34, ../sass/main.scss */
+blockquote {
+  color: #777;
+  position: relative;
+  padding: 0 30px;
+  width: 200px;
+  box-sizing: border-box;
+  margin: 16px 0;
+  text-align: center;
+}
+
+/* line 43, ../sass/main.scss */
+blockquote::before {
+  content: "\201C";
+  font-family: Georgia, serif;
+  font-size: 49px;
+  font-weight: bold;
+  color: #999;
+  position: absolute;
+  left: 3px;
+  top: -3px;
+}
+
+/* line 53, ../sass/main.scss */
+blockquote::after {
+  content: "\201D";
+  font-family: Georgia, serif;
+  font-size: 49px;
+  font-weight: bold;
+  color: #999;
+  position: absolute;
+  right: 3px;
+  top: -3px;
+}
+
+/* line 63, ../sass/main.scss */
+p {
+  text-align: left;
+  margin: 30px 20px;
+  width: 500px;
+  font-size: 1.3em;
+  vertical-align: middle;
+  line-height: 2;
+}
+
+@media screen and (max-width: 540px) {
+  /* line 72, ../sass/main.scss */
+  p {
+    width: auto;
+    font-size: 1.2em;
+    line-height: normal;
+    text-align: center;
+  }
+}
