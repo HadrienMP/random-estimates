@@ -1,17 +1,9 @@
-/* line 1, ../sass/main.scss */
+/* line 4, ../sass/main.scss */
 body {
   font-family: 'Open Sans', sans-serif;
-  background: white;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
   text-align: center;
-  margin: 0;
 }
-
-/* line 12, ../sass/main.scss */
+/* line 8, ../sass/main.scss */
 body > * {
   display: inline-block;
 }
@@ -27,7 +19,7 @@ header {
   vertical-align: middle;
 }
 
-/* line 22, ../sass/main.scss */
+/* line 23, ../sass/main.scss */
 h1 {
   font-size: 2.43em;
   text-transform: uppercase;
@@ -36,13 +28,13 @@ h1 {
   margin: 0;
 }
 
-/* line 30, ../sass/main.scss */
+/* line 31, ../sass/main.scss */
 h1 strong {
   font-size: 1.1em;
   font-weight: 700;
 }
 
-/* line 34, ../sass/main.scss */
+/* line 36, ../sass/main.scss */
 blockquote {
   color: #777;
   position: relative;
@@ -53,31 +45,31 @@ blockquote {
   text-align: center;
 }
 
-/* line 43, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 blockquote::before {
+  font-family: Georgia, serif;
+  font-size: 49px;
+  font-weight: bold;
+  color: #999;
+  position: absolute;
+  top: -3px;
   content: "\201C";
-  font-family: Georgia, serif;
-  font-size: 49px;
-  font-weight: bold;
-  color: #999;
-  position: absolute;
   left: 3px;
-  top: -3px;
 }
 
-/* line 53, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 blockquote::after {
-  content: "\201D";
   font-family: Georgia, serif;
   font-size: 49px;
   font-weight: bold;
   color: #999;
   position: absolute;
-  right: 3px;
   top: -3px;
+  content: "\201D";
+  right: 3px;
 }
 
-/* line 63, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 p {
   text-align: left;
   margin: 30px 20px;
@@ -88,7 +80,7 @@ p {
 }
 
 @media screen and (max-width: 540px) {
-  /* line 72, ../sass/main.scss */
+  /* line 77, ../sass/main.scss */
   p {
     width: auto;
     font-size: 1.2em;
