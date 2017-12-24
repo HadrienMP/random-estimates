@@ -1,12 +1,23 @@
+@import "common";
+@import "header";
+@import "text";
+
+html {
+  position: relative;
+  overflow: hidden;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  margin: 0;
+  margin: 40px auto;
+  max-width: $body_width;
+  overflow: hidden;
+  position: relative;
 
   & > * {
     display: inline-block;
   }
 }
 
-@import "header";
-@import "text";
+@import "responsive";
