@@ -94,7 +94,7 @@ p {
 /* line 5, ../sass/main.scss */
 html {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* line 10, ../sass/main.scss */
@@ -103,7 +103,7 @@ body {
   text-align: center;
   margin: 40px auto;
   max-width: 780px;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
 }
 /* line 18, ../sass/main.scss */
