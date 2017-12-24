@@ -1,13 +1,20 @@
-@import "variables";
+@import "common";
 
 header {
-  border: 2px solid #888;
-  border-left: none;
-  border-right: none;
-  width: $header_width;
-  margin: 40px $header_side_margin;
-  padding-top: 10px;
+  //padding: 0 $header_side_margin;
   vertical-align: middle;
+  background: white;
+  z-index: 200;
+  position: relative;
+  box-sizing: border-box;
+
+  .wrapper {
+    width: $header_width;
+    border: 2px solid #888;
+    border-left: none;
+    border-right: none;
+    margin: auto;
+  }
 }
 
 h1 {

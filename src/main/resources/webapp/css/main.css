@@ -1,26 +1,37 @@
-/* line 1, ../sass/main.scss */
-body {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  margin: 0;
+@keyframes horizontalSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-/* line 6, ../sass/main.scss */
-body > * {
-  display: inline-block;
+@keyframes verticalSlide {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
 /* line 3, ../sass/_header.scss */
 header {
+  vertical-align: middle;
+  background: white;
+  z-index: 200;
+  position: relative;
+  box-sizing: border-box;
+}
+/* line 11, ../sass/_header.scss */
+header .wrapper {
+  width: 200px;
   border: 2px solid #888;
   border-left: none;
   border-right: none;
-  width: 200px;
-  margin: 40px 40px;
-  padding-top: 10px;
-  vertical-align: middle;
+  margin: auto;
 }
 
-/* line 13, ../sass/_header.scss */
+/* line 20, ../sass/_header.scss */
 h1 {
   font-size: 2.43em;
   text-transform: uppercase;
@@ -28,13 +39,13 @@ h1 {
   text-align: left;
   margin: 0;
 }
-/* line 20, ../sass/_header.scss */
+/* line 27, ../sass/_header.scss */
 h1 strong {
   font-size: 1.1em;
   font-weight: 700;
 }
 
-/* line 26, ../sass/_header.scss */
+/* line 33, ../sass/_header.scss */
 blockquote {
   color: #777;
   position: relative;
@@ -44,7 +55,7 @@ blockquote {
   margin: 16px 0;
   text-align: center;
 }
-/* line 45, ../sass/_header.scss */
+/* line 52, ../sass/_header.scss */
 blockquote::before {
   font-family: Georgia, serif;
   font-size: 49px;
@@ -55,7 +66,7 @@ blockquote::before {
   content: "\201C";
   left: 3px;
 }
-/* line 51, ../sass/_header.scss */
+/* line 58, ../sass/_header.scss */
 blockquote::after {
   font-family: Georgia, serif;
   font-size: 49px;
@@ -67,28 +78,61 @@ blockquote::after {
   right: 3px;
 }
 
-/* line 3, ../sass/_text.scss */
+/* line 4, ../sass/_text.scss */
 p {
   text-align: left;
-  margin: 30px 40px;
+  padding: 40px;
   width: 500px;
   min-width: 200px;
   font-size: 1.3em;
   vertical-align: middle;
   line-height: 2;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* line 5, ../sass/main.scss */
+html {
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 10, ../sass/main.scss */
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 780px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 18, ../sass/main.scss */
+body > * {
+  display: inline-block;
+}
+
+/* line 7, ../sass/_responsive.scss */
+p {
+  animation: .5s ease-out 0s 1 horizontalSlide;
 }
 
 @media screen and (max-width: 580px) {
-  /* line 14, ../sass/_text.scss */
+  /* line 14, ../sass/_responsive.scss */
   p {
     width: auto;
     font-size: 1.2em;
     line-height: normal;
   }
 }
-@media screen and (max-width: 860px) {
-  /* line 22, ../sass/_text.scss */
+@media screen and (max-width: 780px) {
+  /* line 26, ../sass/_responsive.scss */
   p {
     text-align: center;
+    animation: .5s ease-out 0s 1 verticalSlide;
+  }
+
+  /* line 31, ../sass/_responsive.scss */
+  header {
+    width: 100%;
   }
 }
