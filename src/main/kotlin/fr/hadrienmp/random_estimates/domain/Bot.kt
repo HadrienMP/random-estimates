@@ -1,23 +1,16 @@
 package fr.hadrienmp.random_estimates.domain
 
-import fr.hadrienmp.random_estimates.lib.Cache
-import fr.hadrienmp.random_estimates.lib.ClassPathFileLines
-import fr.hadrienmp.random_estimates.lib.Random
-import java.time.Duration
 import java.util.*
 
-class Bot {
-    private val estimates = Cache(ClassPathFileLines("data/estimates.txt"), Duration.ofMinutes(5))
-    private val units = Cache(ClassPathFileLines("data/units.txt"), Duration.ofMinutes(5))
-    private val phrases = Cache(ClassPathFileLines("data/phrases.txt"), Duration.ofMinutes(5))
+class Bot(private val phrases: Phrases = RandomPhrases,
+          private val units: Units = RandomUnits,
+          private val measures: Measures = RandomMeasures) {
 
     fun response(locale: Locale = Locale.FRANCE): String {
-        val estimate = estimate()
-        return phrase(estimate)
+        val amount = measures.pick()
+        val unit = units.pick(locale)
+        val estimate = amount + " " + unit.conjugate(amount)
+        return phrases.pick(locale).format(estimate)
     }
-
-    private fun phrase(estimate: Estimate) = Random(phrases).value().format(estimate)
-    private fun estimate() = Estimate(Random(estimates), Random(units))
-
 }
 
