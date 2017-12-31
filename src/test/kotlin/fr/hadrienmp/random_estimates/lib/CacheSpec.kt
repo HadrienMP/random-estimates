@@ -13,7 +13,8 @@ class CacheSpec {
     }
 
     @Test fun `should call the source when the cache is older that its time to live`() {
-        val cache = Cache(listWrapper, Duration.ofMinutes(0))
+        val cache = Cache(listWrapper, Duration.ofMillis(0))
+        Thread.sleep(10)
 
         cache.get()
 
