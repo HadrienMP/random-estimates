@@ -7,11 +7,11 @@ import org.mockito.Mockito
 import org.mockito.Mockito.*
 import java.util.*
 
-class BotTest {
+class EstimatesTest {
     private val units = mock(Units::class.java)
     private val measures = mock(Measures::class.java)
     private val phrases = mock(Phrases::class.java)
-    private val bot = Bot(phrases, units, measures)
+    private val bot = Estimates(phrases, units, measures)
 
     @Before
     fun setUp() {
@@ -25,19 +25,19 @@ class BotTest {
         givenMeasure("3")
         givenUnit(RegularWord("Day"))
 
-        val response = bot.response()
+        val response = bot.get()
 
         assertThat(response).isEqualTo("It will take 3 Days probably")
     }
 
     @Test fun `should pick units and phrases in the requested language`() {
-        bot.response(Locale.ENGLISH)
+        bot.get(Locale.ENGLISH)
         verify(units).pick(Locale.ENGLISH)
         verify(phrases).pick(Locale.ENGLISH)
     }
 
     @Test fun `by default french should be the language`() {
-        bot.response()
+        bot.get()
         verify(units).pick(Locale.FRANCE)
         verify(phrases).pick(Locale.FRANCE)
     }
