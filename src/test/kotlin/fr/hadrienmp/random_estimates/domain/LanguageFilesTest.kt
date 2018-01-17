@@ -20,3 +20,15 @@ class LanguageFilesTest {
         softly.assertAll()
     }
 }
+
+// Estimates(RandPick(
+// Language
+//      - Measures
+//      - Units
+//      - Phrases
+
+
+// pick(language,mesure)
+// pick(language,units)
+// pick(language,phrases)
+// phrase(template, estimate(mesure, unit))
