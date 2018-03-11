@@ -4,18 +4,20 @@ import com.google.gson.Gson
 import fr.hadrienmp.random_estimates.domain.RegularWord
 import java.util.*
 
-fun languageFiles(): List<ClassPathFile> {
-    return listOf(ClassPathFile("data/en.json"), ClassPathFile("data/fr.json"))
+fun languageFiles(): List<File> {
+    val files = ClassPathFolder("data").files()
+    println("Language files : $files")
+    return files
 }
 
-class LanguageFile(file: ClassPathFile) {
+class LanguageFile(file: File) {
     val content = file.content()
 
     val locale: Locale
     init {
         file.content()
         val languageTag = Regex("([a-z]+)\\.json")
-                .find(file.path)
+                .find(file.path())
                 ?.groups
                 ?.get(1)
                 ?.value
