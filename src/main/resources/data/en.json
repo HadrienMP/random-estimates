@@ -1,0 +1,36 @@
+{
+  "measures": [
+    "1/2",
+    "1",
+    "2",
+    "3",
+    "5",
+    "8",
+    "13",
+    "20",
+    "40"
+  ],
+  "units": [
+    "Week",
+    "Dolphin",
+    "Day",
+    "Year",
+    "Minute",
+    "Hour",
+    "Kilometre",
+    "Kilogramme",
+    "T-shirt",
+    "Cuckoo",
+    "Beer",
+    "Tweet",
+    "Euro"
+  ],
+  "phrases": [
+    "My scientific calculations prove that your request will take %s.",
+    "According to the current weather data it's likely that it will take %s.",
+    "%s when Mercury goes retrograde.",
+    "If you try harder, I'm sure you can do it in %s.",
+    "I did not know, so I guessed : %s.",
+    "Without the unit tests ? %s easy."
+  ]
+}

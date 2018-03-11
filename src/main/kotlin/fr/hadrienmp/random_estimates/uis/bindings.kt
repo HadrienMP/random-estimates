@@ -9,7 +9,7 @@ import java.util.*
 fun internationalEstimateStore(): InternationalEstimateStore {
     val estimateStores = estimateStores()
     return InternationalEstimateStore(
-            estimateStores[Locale.FRENCH]!!,
+            estimateStores[Locale.ENGLISH]!!,
             estimateStores)
 }
 
