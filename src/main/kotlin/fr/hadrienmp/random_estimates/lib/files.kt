@@ -12,12 +12,6 @@ interface File {
     fun lines(): List<String>
 }
 
-data class WrappedFile(private val file: java.io.File) : File {
-    override fun path() = file.path!!
-    override fun content() = file.readText()
-    override fun lines() = file.readLines()
-}
-
 data class ClassPathFile(private val path: String) : File {
     private val lines: List<String>
 
