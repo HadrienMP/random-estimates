@@ -22,6 +22,7 @@ fun internationalEstimateStore(): InternationalEstimateStore {
 private fun estimateStores(): Map<Locale, DefaultEstimateStore> {
     val languageFilePaths = languageFilePaths()
     log.info(languageFilePaths.toString())
+    println(languageFilePaths.toString())
     return languageFilePaths
             .map { LanguageFile(it) }
             .map { Pair(it.locale, estimateStore(it.content())) }
