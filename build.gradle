@@ -15,7 +15,7 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'jacoco'
 apply plugin: 'application'
-mainClassName = "fr.hadrienmp.random_estimates.uis.web.MainKt"
+mainClassName = "fr.hadrienmp.random_estimates.MainKt"
 
 repositories {
     mavenCentral()

@@ -3,7 +3,7 @@ package fr.hadrienmp.random_estimates.testutils
 import com.jcabi.http.request.JdkRequest
 import fr.hadrienmp.random_estimates.uis.web.Port
 import fr.hadrienmp.random_estimates.uis.web.PortStore
-import fr.hadrienmp.random_estimates.uis.web.webapp
+import fr.hadrienmp.random_estimates.webapp
 import org.junit.rules.TestRule
 import org.junit.runner.Description
 import org.junit.runners.model.Statement
