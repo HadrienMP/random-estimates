@@ -1,14 +1,12 @@
 package fr.hadrienmp.random_estimates.uis
 
-import fr.hadrienmp.random_estimates.domain.*
+import fr.hadrienmp.random_estimates.domain.DefaultEstimateStore
+import fr.hadrienmp.random_estimates.domain.InternationalEstimateStore
+import fr.hadrienmp.random_estimates.domain.RandomPicker
 import fr.hadrienmp.random_estimates.lib.JsonLanguage
 import fr.hadrienmp.random_estimates.lib.LanguageFile
 import fr.hadrienmp.random_estimates.lib.languageFiles
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 import java.util.*
-
-val log: Logger = LoggerFactory.getLogger("Bindings")
 
 val internationalEstimateStore = internationalEstimateStore()
 
@@ -21,8 +19,6 @@ fun internationalEstimateStore(): InternationalEstimateStore {
 
 private fun estimateStores(): Map<Locale, DefaultEstimateStore> {
     val languageFilePaths = languageFiles()
-    log.info(languageFilePaths.toString())
-    println(languageFilePaths.toString())
     return languageFilePaths
             .map { LanguageFile(it) }
             .map { Pair(it.locale, estimateStore(it.content)) }
