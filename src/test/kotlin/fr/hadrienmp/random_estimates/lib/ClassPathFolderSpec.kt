@@ -15,12 +15,4 @@ class ClassPathFolderSpec {
                 ClassPathFile("data/fr.json"),
                 ClassPathFile("data/en.json"))
     }
-
-    private fun classpathFile(path: String): File {
-        return WrappedFile(
-                java.io.File(
-                        ClassLoader
-                                .getSystemResource(path)
-                                .toURI()))
-    }
 }
