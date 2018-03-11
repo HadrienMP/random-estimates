@@ -15,6 +15,7 @@ fun languageFilePaths(): List<File> {
     val languageFilesDirectoryPath = ClassLoader.getSystemResource(languageFilesDirectoryName)
             .path
     log.info(languageFilesDirectoryPath)
+    println(languageFilesDirectoryPath)
     return File(languageFilesDirectoryPath)
             .listFiles()
             .toList()
