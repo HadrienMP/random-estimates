@@ -11,9 +11,7 @@ val log = LoggerFactory.getLogger("Language Files")
 
 fun languageFilePaths(): List<File> {
     val languageFilesDirectoryName = "data"
-    val languageFilesDirectoryPath = currentThread()
-            .contextClassLoader
-            .getResource(languageFilesDirectoryName)
+    val languageFilesDirectoryPath = ClassLoader.getSystemResource(languageFilesDirectoryName)
             .path
     log.info(languageFilesDirectoryPath)
     return File(languageFilesDirectoryPath)
