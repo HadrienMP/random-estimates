@@ -3,7 +3,6 @@ package fr.hadrienmp.random_estimates.domain
 import fr.hadrienmp.random_estimates.lib.ClassPathFile
 import fr.hadrienmp.random_estimates.lib.JsonLanguage
 import fr.hadrienmp.random_estimates.lib.LanguageFile
-import fr.hadrienmp.random_estimates.lib.classpathFile
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
