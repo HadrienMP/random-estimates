@@ -16,9 +16,7 @@ fun languageFilePaths(): List<File> {
             .path
     log.info(languageFilesDirectoryPath)
     println(languageFilesDirectoryPath)
-    return File(languageFilesDirectoryPath)
-            .listFiles()
-            .toList()
+    return File(languageFilesDirectoryPath).listFiles()?.toList() ?: emptyList()
 }
 
 class LanguageFile(private val file: File) {
