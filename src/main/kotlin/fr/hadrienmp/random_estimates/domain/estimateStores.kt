@@ -3,9 +3,11 @@ package fr.hadrienmp.random_estimates.domain
 import java.util.*
 
 class InternationalEstimateStore(private val defaultStore: EstimateStore,
-                                 private val estimateStores: Map<Locale, EstimateStore>) {
+                                 estimateStores: Map<Locale, EstimateStore>) {
+    private val estimateStores = estimateStores.mapKeys { it.key.language }
+
     fun get(locale: Locale): String {
-        val store = estimateStores[locale] ?: defaultStore
+        val store = estimateStores[locale.language] ?: defaultStore
         return store.get()
     }
 }
@@ -16,7 +18,7 @@ interface EstimateStore {
 
 class DefaultEstimateStore(private val measures: Picker<String>,
                            private val units: Picker<Conjugable>,
-                           private val phrases: Picker<String>): EstimateStore {
+                           private val phrases: Picker<String>) : EstimateStore {
     override fun get() = phrase(estimate())
 
     private fun phrase(estimate: String) = phrases.pick().format(estimate)
