@@ -2,13 +2,11 @@ package fr.hadrienmp.random_estimates.domain
 
 import fr.hadrienmp.random_estimates.lib.ClassPathFile
 import fr.hadrienmp.random_estimates.lib.LanguageFile
-import fr.hadrienmp.random_estimates.lib.classpathFile
 import junitparams.JUnitParamsRunner
 import junitparams.Parameters
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.io.File
 import java.io.Serializable
 import java.util.*
 
