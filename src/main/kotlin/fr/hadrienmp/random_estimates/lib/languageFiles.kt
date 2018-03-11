@@ -2,31 +2,20 @@ package fr.hadrienmp.random_estimates.lib
 
 import com.google.gson.Gson
 import fr.hadrienmp.random_estimates.domain.RegularWord
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
-import java.io.File
-import java.lang.Thread.*
 import java.util.*
 
-val log: Logger = LoggerFactory.getLogger("Language Files")
-
-fun languageFilePaths(): List<File> {
-    val languageFilesDirectoryName = "data"
-    val languageFilesDirectoryPath = ClassLoader.getSystemResource(languageFilesDirectoryName)
-            .path
-    log.info(languageFilesDirectoryPath)
-    println(languageFilesDirectoryPath)
-    return File(languageFilesDirectoryPath).listFiles()?.toList() ?: emptyList()
+fun languageFiles(): List<ClassPathFile> {
+    return listOf(ClassPathFile("data/en.json"), ClassPathFile("data/fr.json"))
 }
 
-class LanguageFile(private val file: File) {
-    fun content() = file.readText()
+class LanguageFile(file: ClassPathFile) {
+    val content = file.content()
 
     val locale: Locale
     init {
-        if (!file.exists()) throw IllegalArgumentException("The provided file does not exist")
+        file.content()
         val languageTag = Regex("([a-z]+)\\.json")
-                .find(file.name)
+                .find(file.path)
                 ?.groups
                 ?.get(1)
                 ?.value

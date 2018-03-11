@@ -1,5 +1,6 @@
 package fr.hadrienmp.random_estimates.domain
 
+import fr.hadrienmp.random_estimates.lib.ClassPathFile
 import fr.hadrienmp.random_estimates.lib.JsonLanguage
 import fr.hadrienmp.random_estimates.lib.LanguageFile
 import fr.hadrienmp.random_estimates.lib.classpathFile
@@ -9,8 +10,8 @@ import org.junit.Test
 class JsonLanguageSpec {
     @Test
     fun `should provide measures`() {
-        val languageFile = LanguageFile(classpathFile("fake/fr.json"))
-        val language = JsonLanguage(languageFile.content())
+        val languageFile = LanguageFile(ClassPathFile("fake/fr.json"))
+        val language = JsonLanguage(languageFile.content)
 
         val measures = language.measures()
 
@@ -18,8 +19,8 @@ class JsonLanguageSpec {
     }
     @Test
     fun `should provide units`() {
-        val languageFile = LanguageFile(classpathFile("fake/fr.json"))
-        val language = JsonLanguage(languageFile.content())
+        val languageFile = LanguageFile(ClassPathFile("fake/fr.json"))
+        val language = JsonLanguage(languageFile.content)
 
         val units = language.units()
 
@@ -27,8 +28,8 @@ class JsonLanguageSpec {
     }
     @Test
     fun `should provide phrases`() {
-        val languageFile = LanguageFile(classpathFile("fake/fr.json"))
-        val language = JsonLanguage(languageFile.content())
+        val languageFile = LanguageFile(ClassPathFile("fake/fr.json"))
+        val language = JsonLanguage(languageFile.content)
 
         val phrases = language.phrases()
 
@@ -37,8 +38,8 @@ class JsonLanguageSpec {
 
     @Test
     fun `the measures should be empty for an empty json`() {
-        val languageFile = LanguageFile(classpathFile("empty/en.json"))
-        val language = JsonLanguage(languageFile.content())
+        val languageFile = LanguageFile(ClassPathFile("empty/en.json"))
+        val language = JsonLanguage(languageFile.content)
 
         val measures = language.measures()
 
