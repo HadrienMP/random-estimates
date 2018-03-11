@@ -15,7 +15,7 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'jacoco'
 apply plugin: 'application'
-mainClassName = "fr.hadrienmp.random_estimates.MainKt"
+mainClassName = "fr.hadrienmp.random_estimates.uis.web.MainKt"
 
 repositories {
     mavenCentral()
@@ -36,6 +36,7 @@ dependencies {
     testCompile 'com.pholser:junit-quickcheck-generators:0.6'
     testCompile 'com.jcabi:jcabi-http:1.17.1'
     testCompile 'com.sun.jersey:jersey-client:1.19'
+    testCompile 'pl.pragmatists:JUnitParams:1.1.1'
 }
 
 task stage(dependsOn: ['installDist'])
