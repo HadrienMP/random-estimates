@@ -8,7 +8,7 @@ import java.util.*
 
 object HomePage {
     val log: Logger = LoggerFactory.getLogger(HomePage::class.java)
-    private val estimates = internationalEstimateStore()
+    private val estimates = internationalEstimateStore
 
     fun display(context: Context) {
         val locale = context.request().locale

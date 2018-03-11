@@ -5,7 +5,7 @@ import io.javalin.Context
 import java.util.*
 
 object HipchatBot {
-    private val estimates = internationalEstimateStore()
+    private val estimates = internationalEstimateStore
 
     fun estimate(context: Context) {
         val rawResponse = estimates.get(Locale.FRENCH)
