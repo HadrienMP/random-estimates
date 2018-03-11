@@ -6,8 +6,8 @@ import org.junit.Test
 class LanguageFilesPathSpec {
     @Test
     fun `should find the files in the resource folder`() {
-        val files = languageFilePaths()
-        val filenames = files.map { it.name }
-        assertThat(filenames).contains("en.json", "fr.json")
+        val files = languageFiles()
+        val filenames = files.map { it.path }
+        assertThat(filenames).contains("data/en.json", "data/fr.json")
     }
 }

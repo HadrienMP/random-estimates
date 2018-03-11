@@ -1,5 +1,6 @@
 package fr.hadrienmp.random_estimates.domain
 
+import fr.hadrienmp.random_estimates.lib.ClassPathFile
 import fr.hadrienmp.random_estimates.lib.LanguageFile
 import fr.hadrienmp.random_estimates.lib.classpathFile
 import junitparams.JUnitParamsRunner
@@ -16,7 +17,7 @@ class LanguageFileSpec {
     @Test
     @Parameters(method = "validFileName")
     fun `should detect the language from the file name`(fileName: String, expectedLocale: Locale) {
-        val jsonLanguage = LanguageFile(classpathFile(fileName))
+        val jsonLanguage = LanguageFile(ClassPathFile(fileName))
         val locale = jsonLanguage.locale
         assertThat(locale).isEqualTo(expectedLocale)
     }
@@ -30,23 +31,23 @@ class LanguageFileSpec {
 
     @Test(expected = IllegalArgumentException::class)
     fun `should not create files that do not contain the locale at the expected location`() {
-        LanguageFile(classpathFile("broken/1234.json"))
+        LanguageFile(ClassPathFile("broken/1234.json"))
     }
 
     @Test(expected = IllegalArgumentException::class)
     fun `should not create non json files`() {
-        LanguageFile(classpathFile("broken/fa.txt"))
+        LanguageFile(ClassPathFile("broken/fa.txt"))
     }
 
     @Test(expected = IllegalArgumentException::class)
     fun `should not create non existing files`() {
-        LanguageFile(File("non-existent/fr.json"))
+        LanguageFile(ClassPathFile("non-existent/fr.json"))
     }
 
     @Test
     fun `should return it's content`() {
-        val languageFile = LanguageFile(classpathFile("empty/en.json"))
-        val content = languageFile.content()
+        val languageFile = LanguageFile(ClassPathFile("empty/en.json"))
+        val content = languageFile.content
         assertThat(content).isEqualTo("{ \"measures\": [] }")
     }
 }

@@ -3,7 +3,7 @@ package fr.hadrienmp.random_estimates.uis
 import fr.hadrienmp.random_estimates.domain.*
 import fr.hadrienmp.random_estimates.lib.JsonLanguage
 import fr.hadrienmp.random_estimates.lib.LanguageFile
-import fr.hadrienmp.random_estimates.lib.languageFilePaths
+import fr.hadrienmp.random_estimates.lib.languageFiles
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.util.*
@@ -20,12 +20,12 @@ fun internationalEstimateStore(): InternationalEstimateStore {
 }
 
 private fun estimateStores(): Map<Locale, DefaultEstimateStore> {
-    val languageFilePaths = languageFilePaths()
+    val languageFilePaths = languageFiles()
     log.info(languageFilePaths.toString())
     println(languageFilePaths.toString())
     return languageFilePaths
             .map { LanguageFile(it) }
-            .map { Pair(it.locale, estimateStore(it.content())) }
+            .map { Pair(it.locale, estimateStore(it.content)) }
             .toMap()
 }
 
