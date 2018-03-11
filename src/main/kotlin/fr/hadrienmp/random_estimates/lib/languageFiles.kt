@@ -2,9 +2,12 @@ package fr.hadrienmp.random_estimates.lib
 
 import com.google.gson.Gson
 import fr.hadrienmp.random_estimates.domain.RegularWord
+import org.slf4j.LoggerFactory
 import java.io.File
 import java.lang.Thread.*
 import java.util.*
+
+val log = LoggerFactory.getLogger("Language Files")
 
 fun languageFilePaths(): List<File> {
     val languageFilesDirectoryName = "data"
@@ -12,6 +15,7 @@ fun languageFilePaths(): List<File> {
             .contextClassLoader
             .getResource(languageFilesDirectoryName)
             .path
+    log.info(languageFilesDirectoryPath)
     return File(languageFilesDirectoryPath)
             .listFiles()
             .toList()
