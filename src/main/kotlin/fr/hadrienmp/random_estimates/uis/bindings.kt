@@ -13,11 +13,13 @@ val estimateStores = estimateStores()
 val internationalEstimateStore = internationalEstimateStore(estimateStores)
 
 fun internationalEstimateStore(estimateStores: Map<Locale, EstimateStore>): InternationalEstimateStore {
+    println("Estimate Stores : $estimateStores")
     return InternationalEstimateStore(estimateStores[Locale.ENGLISH]!!, estimateStores)
 }
 
 private fun estimateStores(): Map<Locale, EstimateStore> {
     val languageFilePaths = languageFiles()
+    println("Language files : $languageFilePaths")
     return languageFilePaths
             .map { LanguageFile(it) }
             .map { Pair(it.locale, estimateStore(it.content)) }

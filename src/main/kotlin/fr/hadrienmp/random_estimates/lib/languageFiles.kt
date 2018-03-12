@@ -4,11 +4,7 @@ import com.google.gson.Gson
 import fr.hadrienmp.random_estimates.domain.RegularWord
 import java.util.*
 
-fun languageFiles(): List<File> {
-    val files = classPathFolders.filesIn("data")
-    println("Language files : $files")
-    return files
-}
+fun languageFiles() = classPathFolders.filesIn("data")
 
 class LanguageFile(file: File) {
     val content = file.content()
