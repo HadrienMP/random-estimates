@@ -2,6 +2,7 @@ package fr.hadrienmp.random_estimates
 
 import fr.hadrienmp.random_estimates.uis.hipchat.HipchatBot
 import fr.hadrienmp.random_estimates.uis.web.HomePage
+import fr.hadrienmp.random_estimates.uis.web.HomePage.display
 import fr.hadrienmp.random_estimates.uis.web.Port
 import fr.hadrienmp.random_estimates.uis.web.ThymeleafTemplates
 import fr.hadrienmp.random_estimates.uis.web.WebApp

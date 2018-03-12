@@ -5,24 +5,23 @@ import fr.hadrienmp.random_estimates.domain.RegularWord
 import java.util.*
 
 fun languageFiles(): List<File> {
-    val files = ClassPathFolder("data").files()
+    val files = classPathFolders.filesIn("data")
     println("Language files : $files")
     return files
 }
 
 class LanguageFile(file: File) {
     val content = file.content()
+    val locale = localeOf(file)
 
-    val locale: Locale
-    init {
-        file.content()
+    private fun localeOf(file: File): Locale {
         val languageTag = Regex("([a-z]+)\\.json")
                 .find(file.path())
                 ?.groups
                 ?.get(1)
                 ?.value
                 ?: throw IllegalArgumentException("The file name does not look like a json language file")
-        locale = Locale(languageTag)
+        return Locale(languageTag)
     }
 }
 

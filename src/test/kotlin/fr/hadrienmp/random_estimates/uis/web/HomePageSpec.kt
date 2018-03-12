@@ -15,20 +15,24 @@ class HomePageSpec {
 
     @Test
     fun `should contain the title of the app`() {
-        val response = webServerRule.request()
-                .method(Request.GET)
-                .fetch()
-                .body()
+        val response = request().fetch().body()
 
         assertThat(response).containsPattern(Regex("<h1>.*Random.*Estimate.*").toPattern())
     }
 
     @Test
+    fun `should contain an estimate`() {
+        val response = request().fetch().body()
+
+        assertThat(response).containsPattern(Regex("id=\"estimate\">[^>]+").toPattern())
+    }
+
+    @Test
     fun `should be rendered successfully`() {
-        val response = webServerRule.request()
-                .method(Request.GET)
-                .fetch()
+        val response = request().fetch()
 
         assertThat(response.status()).isEqualTo(200)
     }
+
+    private fun request() = webServerRule.request().method(Request.GET)
 }
