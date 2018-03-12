@@ -9,10 +9,13 @@ interface Picker<out T> {
 class RandomPicker<out T>(private val values: List<T>) : Picker<T> {
     private val random = Random()
 
-    override fun pick(): T {
+    init {
         if (values.isEmpty()) {
             throw IllegalArgumentException("La liste ne peut pas être vide")
         }
+    }
+
+    override fun pick(): T {
         val position = random.nextInt(values.size)
         return values[position]
     }

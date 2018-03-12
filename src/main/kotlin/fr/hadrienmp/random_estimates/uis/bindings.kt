@@ -1,6 +1,7 @@
 package fr.hadrienmp.random_estimates.uis
 
 import fr.hadrienmp.random_estimates.domain.DefaultEstimateStore
+import fr.hadrienmp.random_estimates.domain.EstimateStore
 import fr.hadrienmp.random_estimates.domain.InternationalEstimateStore
 import fr.hadrienmp.random_estimates.domain.RandomPicker
 import fr.hadrienmp.random_estimates.lib.JsonLanguage
@@ -8,16 +9,14 @@ import fr.hadrienmp.random_estimates.lib.LanguageFile
 import fr.hadrienmp.random_estimates.lib.languageFiles
 import java.util.*
 
-val internationalEstimateStore = internationalEstimateStore()
+val estimateStores = estimateStores()
+val internationalEstimateStore = internationalEstimateStore(estimateStores)
 
-fun internationalEstimateStore(): InternationalEstimateStore {
-    val estimateStores = estimateStores()
-    return InternationalEstimateStore(
-            estimateStores[Locale.ENGLISH]!!,
-            estimateStores)
+fun internationalEstimateStore(estimateStores: Map<Locale, EstimateStore>): InternationalEstimateStore {
+    return InternationalEstimateStore(estimateStores[Locale.ENGLISH]!!, estimateStores)
 }
 
-private fun estimateStores(): Map<Locale, DefaultEstimateStore> {
+private fun estimateStores(): Map<Locale, EstimateStore> {
     val languageFilePaths = languageFiles()
     return languageFilePaths
             .map { LanguageFile(it) }
@@ -25,7 +24,7 @@ private fun estimateStores(): Map<Locale, DefaultEstimateStore> {
             .toMap()
 }
 
-private fun estimateStore(json: String): DefaultEstimateStore {
+private fun estimateStore(json: String): EstimateStore {
     val jsonLanguage = JsonLanguage(json)
     return DefaultEstimateStore(
             RandomPicker(jsonLanguage.measures()),
