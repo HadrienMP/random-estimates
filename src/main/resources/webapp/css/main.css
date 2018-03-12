@@ -101,13 +101,18 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  margin: 0;
+}
+
+/* line 16, ../sass/main.scss */
+#wrapper {
   margin: 40px auto;
   max-width: 780px;
   overflow-x: hidden;
   position: relative;
 }
-/* line 18, ../sass/main.scss */
-body > * {
+/* line 22, ../sass/main.scss */
+#wrapper > * {
   display: inline-block;
 }
 

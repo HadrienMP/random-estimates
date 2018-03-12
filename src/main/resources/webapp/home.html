@@ -9,13 +9,19 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
-        <div class="wrapper">
-            <h1><strong>Random</strong> Estimates</h1>
-            <blockquote>Life is too <br/>short to <br/>estimate stuff</blockquote>
-        </div>
-    </header><!--
+    <div id="wrapper">
+        <header>
+            <div class="wrapper">
+                <h1><strong>Random</strong> Estimates</h1>
+                <blockquote>Life is too <br/>short to <br/>estimate stuff</blockquote>
+            </div>
+        </header><!--
 
  --><p th:text="${estimate}" id="estimate">Estimate</p>
+    </div>
+
+    <a href="https://github.com/HadrienMP/random-estimates">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
 </body>
 </html>

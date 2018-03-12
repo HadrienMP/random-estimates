@@ -10,6 +10,10 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  margin: 0;
+}
+
+#wrapper {
   margin: 40px auto;
   max-width: $body_width;
   overflow-x: hidden;
