@@ -6,14 +6,14 @@ interface Folders {
 
 val classPathFolders = classPathFolders()
 
-fun classPathFolders(sourceCode: SourceCode = SourceCode()) = when {
-    sourceCode.isInJar() -> JarClassPathFolders(sourceCode)
+fun classPathFolders(resourceFiles: ResourceFiles = ResourceFiles()) = when {
+    resourceFiles.areInJar() -> JarClassPathFolders(resourceFiles)
     else -> EasyClassPathFolders()
 }
 
-class JarClassPathFolders(private val sourceCode: SourceCode) : Folders {
+class JarClassPathFolders(private val resourceFiles: ResourceFiles) : Folders {
     override fun filesIn(path: String): List<File> {
-        return sourceCode.jarFilesAndFoldersPaths()
+        return resourceFiles.jarFilesAndFoldersPaths()
                 .filter { it.matches(Regex("^$path/[^/]+\\.\\w+$")) }
                 .map { ClassPathFile(it) }
     }

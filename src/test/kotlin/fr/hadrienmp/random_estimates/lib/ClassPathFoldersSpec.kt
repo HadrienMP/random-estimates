@@ -26,7 +26,7 @@ class ClassPathFoldersSpec {
     @Parameters(method = "filesInFolders")
     fun `should return the file contained in the folder in a jar context`(folderName: String, expectedFiles: List<String>) {
         val sourceCode = givenCodeIsInJarWith(listOf("data", "data/fr.json", "data/en.json", "webapp", "webapp/css", "webapp/css/main.css"))
-        val folder = classPathFolders(sourceCode = sourceCode)
+        val folder = classPathFolders(resourceFiles = sourceCode)
 
         val files = folder.filesIn(folderName)
 
@@ -40,16 +40,16 @@ class ClassPathFoldersSpec {
     @Test
     fun `should not search recursively in a jar context`() {
         val sourceCode = givenCodeIsInJarWith(listOf("data", "data/fr.json", "data/en.json", "data/folder", "data/folder/toto.txt"))
-        val folder = classPathFolders(sourceCode = sourceCode)
+        val folder = classPathFolders(resourceFiles = sourceCode)
 
         val files = folder.filesIn("data")
 
         assertThat(files).containsOnly(ClassPathFile("data/fr.json"), ClassPathFile("data/en.json"))
     }
 
-    private fun givenCodeIsInJarWith(folders: List<String>): SourceCode {
-        val sourceCode = Mockito.mock(SourceCode::class.java)
-        given(sourceCode.isInJar()).willReturn(true)
+    private fun givenCodeIsInJarWith(folders: List<String>): ResourceFiles {
+        val sourceCode = Mockito.mock(ResourceFiles::class.java)
+        given(sourceCode.areInJar()).willReturn(true)
         given(sourceCode.jarFilesAndFoldersPaths()).willReturn(folders)
         return sourceCode
     }
