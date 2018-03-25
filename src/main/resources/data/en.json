@@ -11,19 +11,19 @@
     "40"
   ],
   "units": [
-    "Week",
-    "Dolphin",
-    "Day",
-    "Year",
-    "Minute",
-    "Hour",
-    "Kilometre",
-    "Kilogramme",
-    "T-shirt",
-    "Cuckoo",
-    "Beer",
-    "Tweet",
-    "Euro"
+    "week",
+    "dolphin",
+    "day",
+    "year",
+    "minute",
+    "hour",
+    "kilometre",
+    "kilogramme",
+    "t-shirt",
+    "cuckoo",
+    "beer",
+    "tweet",
+    "euro"
   ],
   "phrases": [
     "My scientific calculations prove that your request will take %s.",

@@ -1,8 +1,6 @@
-package fr.hadrienmp.random_estimates.domain
+package fr.hadrienmp.random_estimates.lib
 
-import fr.hadrienmp.random_estimates.lib.ClassPathFile
-import fr.hadrienmp.random_estimates.lib.JsonLanguage
-import fr.hadrienmp.random_estimates.lib.LanguageFile
+import fr.hadrienmp.random_estimates.domain.RegularWord
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 

@@ -1,7 +1,6 @@
 @import "common";
 
 header {
-  //padding: 0 $header_side_margin;
   vertical-align: middle;
   background: white;
   z-index: 200;
@@ -34,7 +33,6 @@ blockquote {
   color: #777;
   position: relative;
   padding: 0 30px;
-  width: $header_width;
   box-sizing: border-box;
   margin: 16px 0;
   text-align: center;

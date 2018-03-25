@@ -1,7 +1,5 @@
-package fr.hadrienmp.random_estimates.domain
+package fr.hadrienmp.random_estimates.lib
 
-import fr.hadrienmp.random_estimates.lib.ClassPathFile
-import fr.hadrienmp.random_estimates.lib.LanguageFile
 import junitparams.JUnitParamsRunner
 import junitparams.Parameters
 import org.assertj.core.api.Assertions.assertThat
@@ -15,8 +13,8 @@ class LanguageFileSpec {
     @Test
     @Parameters(method = "validFileName")
     fun `should detect the language from the file name`(fileName: String, expectedLocale: Locale) {
-        val jsonLanguage = LanguageFile(ClassPathFile(fileName))
-        val locale = jsonLanguage.locale
+        val languageFile = LanguageFile(ClassPathFile(fileName))
+        val locale = languageFile.locale
         assertThat(locale).isEqualTo(expectedLocale)
     }
 
